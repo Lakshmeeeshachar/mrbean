@@ -38,7 +38,7 @@ public class CarController extends HttpServlet{
 	  				String licenceplatenumber = request.getParameter("licenceplatenumber");
 	  				String seatingcapacity = request.getParameter("seatingcapacity");
 	      
-	  				// Create a student object use DTO pattern to transfer the data
+	  				// Create a car object use DTO pattern to transfer the data
 	  			      
 	  				 Car car=new Car();  				
 	  				  car.setCid(cid);
@@ -50,7 +50,7 @@ public class CarController extends HttpServlet{
 	  				  car.setLicenceplatenumber(licenceplatenumber);
 	  				  car.setSeatingcapacity(seatingcapacity);
 	  		  
-	  			       //Use Factory Design patter to the StudentService object
+	  			       //Use Factory Design patter to the CarService object
 	  				  
 	  				  
 	  				
@@ -83,7 +83,7 @@ public class CarController extends HttpServlet{
 	      			
 	      			
 	      		
-  				// Based on the student object send the response to the client
+  				// Based on the car object send the response to the client
   					RequestDispatcher requestDispatcher = null;
   					if (car == null) {
   						requestDispatcher = request.getRequestDispatcher("notexisted.html");
@@ -99,14 +99,14 @@ public class CarController extends HttpServlet{
 	              }
 	           
 	              
-	              // Module for Deleting a student Record  
+	              // Module for Deleting a car Record  
 	              
 	              if (action.equalsIgnoreCase("DELETE")) {
 	            	  
 	            		// Collect the data from the client                                             	
 	      			String cid = request.getParameter("cid");
 	      			
-	      		// Use Factory Design pattern to the StudentService object
+	      		// Use Factory Design pattern to the CarService object
 	      			
 	      			CarService carService= CarServiceFactory.getCarService();
   			     	String status   =	carService.deleteById(cid);
@@ -173,7 +173,7 @@ public class CarController extends HttpServlet{
 		  				  car.setLicenceplatenumber(licenceplatenumber);
 		  				  car.setSeatingcapacity(seatingcapacity);
 		  		  
-		  			       //Use Factory Design patter to the StudentService object
+		  			       //Use Factory Design patter to the CarService object
 		  				 CarService carService= CarServiceFactory.getCarService(); 
 		  				String status =carService.update(car);
 		  				
