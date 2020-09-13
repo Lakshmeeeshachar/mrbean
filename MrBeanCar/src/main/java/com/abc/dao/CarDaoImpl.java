@@ -85,7 +85,7 @@ public class CarDaoImpl implements CarDao {
 			if (resultSet.next() == true) {
 			
 				car=new Car();
-				// Keep the data obtained from ResultSet to Student DTO object
+				// Keep the data obtained from ResultSet to Car DTO object
 				car.setCid(resultSet.getString("cid"));
 				car.setCompany(resultSet.getString("company"));
 				car.setModel(resultSet.getString("model"));
